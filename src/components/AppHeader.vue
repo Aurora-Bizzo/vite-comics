@@ -4,52 +4,52 @@ export default {
         return{
             menuItems: [
                 {
-                    lable: 'Characters',
+                    lable: 'CHARACTERS',
                     url: '#',
                     active: true
                 },
                 {
-                    lable: 'Comics',
+                    lable: 'COMICS',
                     url: '#',
                     active: false
                 },
                 {
-                    lable: 'Movies',
+                    lable: 'MOVIES',
                     url: '#',
                     active: false
                 },
                 {
-                    lable: 'Tv',
+                    lable: 'TV',
                     url: '#',
                     active: false
                 },
                 {
-                    lable: 'Games',
+                    lable: 'GAMES',
                     url: '#',
                     active: false
                 },
                 {
-                    lable: 'Collectibles',
+                    lable: 'COLLECTIBLES',
                     url: '#',
                     active: false
                 },
                 {
-                    lable: 'Videos',
+                    lable: 'VIDEOS',
                     url: '#',
                     active: false
                 },
                 {
-                    lable: 'Fans',
+                    lable: 'FANS',
                     url: '#',
                     active: false
                 },
                 {
-                    lable: 'News',
+                    lable: 'NEWS',
                     url: '#',
                     active: false
                 },
                 {
-                    lable: 'Shop',
+                    lable: 'SHOP',
                     url: '#',
                     active: false
                 }
@@ -60,7 +60,7 @@ export default {
 </script> 
 
 <template lang="">
-    <header class="container">
+    <header class="container-xl">
         <div class="navbar">
             <div class="logo">
                 <a href="#">
@@ -71,7 +71,9 @@ export default {
                 <ul>
                     <li v-for="(item, index) in menuItems" :key="index" :class="item.active ? 'active' : ''">
                         <a href="item.url" :class="item.active ? 'active' : ''">
-                            {{item.lable}}
+                            <strong>
+                                {{item.lable}}
+                            </strong> 
                         </a>
                     </li>
                 </ul>
@@ -83,32 +85,44 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/_variables.scss' as *;
 @use '../styles/partials/_mixins.scss' as *;
+
+    img {
+        width: 80px;
+    }
     .navbar {
-        @include flex-center;
-        justify-content: space-between;
-        height: 107px;
-        margin: 1rem 0;
+        height: 124px;
+        padding: 0;
 
         nav {
         @include flex-center;
-        height: 100%;
+        height: $h-100;
 
             ul {
                 list-style: none;
                 display: flex;
-                height: 100%;
+                height: $h-100;
+                margin: 0;
 
                 li {
                     @include flex-center;
-                    padding: 10px;
-                    height: 100%;
-                }
-                li.active{
-                    border-bottom: 3px solid rgb(12, 124, 236);
-                }
-                a {
+                    padding: 10px 15px;
+                    height: $h-100;
+                    border-bottom: 3px solid transparent;
+
                     &.active{
-                        color: rgb(12, 124, 236); 
+                    border-bottom: $boreder-blue;
+
+                        a {
+                            color: $sky-blue;
+                        }
+                    }
+
+                    &:hover{
+                        border-bottom: $boreder-blue;
+                    }
+
+                    a:hover{
+                        color: $sky-blue; 
                     }
                 }
             }
