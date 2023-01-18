@@ -93,7 +93,35 @@ export default {
                  </div>
             </div>
         </div>
-        <div class="bottom-footer"></div>
+        <div class="bottom-footer">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-6">
+                        <button><strong>SIGN-UP NOW!</strong></button>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li><strong>FOLLOW US</strong></li>
+                            <li>
+                                <img src="src/assets/img/footer-facebook.png" alt="">
+                            </li>
+                            <li>
+                                <img src="src/assets/img/footer-twitter.png" alt="">
+                            </li>
+                            <li>
+                                <img src="src/assets/img/footer-youtube.png" alt="">
+                            </li>
+                            <li>
+                                <img src="src/assets/img/footer-pinterest.png" alt="">
+                            </li>
+                            <li>
+                                <img src="src/assets/img/footer-periscope.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 </template>
 
@@ -144,6 +172,36 @@ span {
         background-image: url(src/assets/img/dc-logo-bg.png);
         background-repeat: no-repeat;
         background-position: right center;
+    }
+}
+
+.bottom-footer {
+    background-color: #2a2a2a;
+
+    .row {
+        padding: 2rem 0;
+    }
+
+    button {
+        border-color: $sky-blue;
+        background-color: #2a2a2a;
+        color: #fff;
+        padding: 0.5rem 1rem;
+    }
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    li {
+        margin: 0 1rem;
+
+        & strong {
+            color: $sky-blue;
+            font-size: 25px;
+        }  
     }
 }
 </style>
